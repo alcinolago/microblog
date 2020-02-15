@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">@android:color/darker_gray</color>
+    <color name="background">#5C1A20</color>
+    <color name="overlay">#00ffffff</color>
 </resources>
