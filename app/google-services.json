@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "672125767386",
+    "firebase_url": "https://microblog-boticario.firebaseio.com",
+    "project_id": "microblog-boticario",
+    "storage_bucket": "microblog-boticario.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672125767386:android:5021964266f8a434fedfe3",
+        "android_client_info": {
+          "package_name": "br.com.microblog.boticario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672125767386-44rbqfv6o95c3qsrb7suc3njts4ov5ci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD5dER8OFM-aLcLL1rDD4nu7CoiewzekE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672125767386-44rbqfv6o95c3qsrb7suc3njts4ov5ci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
