@@ -17,4 +17,6 @@
     <string name="button_logout">Logout</string>
     <string name="title_lets_go">Vamos lá?</string>
     <string name="instruction_register">Vou precisar de algunas dados...</string>
+    <string name="forgot_password_title">Esqueçeu a senha?</string>
+    <string name="forgot_password_instructions">Não tem problema, me informa o seu email!</string>
 </resources>

@@ -16,6 +16,7 @@ import br.com.microblog.boticario.helper.DialogProgressBar
 import br.com.microblog.boticario.helper.InputTextWatcher
 import br.com.microblog.boticario.helper.Keyboard
 import br.com.microblog.boticario.firebase.provider.SignInWithEmailAndPasswordListener
+import br.com.microblog.boticario.presentation.login.forgot.ForgotPasswordActivity
 import br.com.microblog.boticario.presentation.login.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.ext.android.inject
@@ -115,8 +116,8 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.navToForgetPassword.observe(this, Observer {
             it?.getContentIfNotHandled()?.let { navToForgetPassword ->
-                //if (navToForgetPassword)
-                    //startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
+                if (navToForgetPassword)
+                    startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
             }
         })
 
