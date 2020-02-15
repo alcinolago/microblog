@@ -16,6 +16,7 @@ import br.com.microblog.boticario.helper.DialogProgressBar
 import br.com.microblog.boticario.helper.InputTextWatcher
 import br.com.microblog.boticario.helper.Keyboard
 import br.com.microblog.boticario.firebase.provider.SignInWithEmailAndPasswordListener
+import br.com.microblog.boticario.presentation.blog.form.FormBlogActivity
 import br.com.microblog.boticario.presentation.login.forgot.ForgotPasswordActivity
 import br.com.microblog.boticario.presentation.login.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -130,10 +131,10 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.navToPautas.observe(this, Observer {
             it?.getContentIfNotHandled()?.let { navToPautas ->
-//                if (navToPautas) {
-//                    startActivity(Intent(this@LoginActivity, PautaListActivity::class.java))
-//                    finish()
-//                }
+                if (navToPautas) {
+                    startActivity(Intent(this@LoginActivity, FormBlogActivity::class.java))
+                    finish()
+                }
             }
         })
     }

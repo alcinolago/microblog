@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.login.forgot.ForgotPasswordActivity"></activity>
+
+        <activity android:name=".presentation.blog.form.FormBlogActivity"/>
+        <activity android:name=".presentation.login.forgot.ForgotPasswordActivity" />
         <activity android:name=".presentation.login.register.RegisterActivity" />
         <activity android:name=".presentation.login.LoginActivity">
             <intent-filter>
@@ -19,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

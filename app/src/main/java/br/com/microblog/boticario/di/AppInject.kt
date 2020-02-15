@@ -6,6 +6,7 @@ import br.com.microblog.boticario.firebase.provider.FirebaseAuthProvider
 import br.com.microblog.boticario.firebase.provider.FirebaseAuthProviderImpl
 import br.com.microblog.boticario.firebase.provider.FirebaseDataProvider
 import br.com.microblog.boticario.firebase.provider.FirebaseDataProviderImpl
+import br.com.microblog.boticario.presentation.blog.form.FormBlogViewModel
 import br.com.microblog.boticario.presentation.login.LoginViewModel
 import br.com.microblog.boticario.presentation.login.forgot.ForgotPasswordViewModel
 import br.com.microblog.boticario.presentation.login.register.RegisterViewModel
@@ -27,5 +28,6 @@ object AppInject {
         viewModel { LoginViewModel(get()) }
         viewModel { RegisterViewModel(get(), get()) }
         viewModel { ForgotPasswordViewModel(get()) }
+        viewModel { FormBlogViewModel(get(), get()) }
     }
 }
