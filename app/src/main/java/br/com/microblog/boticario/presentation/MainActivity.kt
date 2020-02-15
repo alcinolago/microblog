@@ -1,7 +1,8 @@
-package br.com.microblog.boticario
+package br.com.microblog.boticario.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.microblog.boticario.R
 
 class MainActivity : AppCompatActivity() {
 
