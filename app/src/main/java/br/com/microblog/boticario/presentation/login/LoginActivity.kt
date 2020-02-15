@@ -16,6 +16,7 @@ import br.com.microblog.boticario.helper.DialogProgressBar
 import br.com.microblog.boticario.helper.InputTextWatcher
 import br.com.microblog.boticario.helper.Keyboard
 import br.com.microblog.boticario.firebase.provider.SignInWithEmailAndPasswordListener
+import br.com.microblog.boticario.presentation.login.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -121,8 +122,8 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.navToRegister.observe(this, Observer {
             it?.getContentIfNotHandled()?.let { navToRegister ->
-                //if (navToRegister)
-                    //startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+                if (navToRegister)
+                    startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
             }
         })
 

@@ -15,4 +15,6 @@
     <string name="button_send_password">Enviar</string>
     <string name="button_register_user">Cadastrar</string>
     <string name="button_logout">Logout</string>
+    <string name="title_lets_go">Vamos lá?</string>
+    <string name="instruction_register">Vou precisar de algunas dados...</string>
 </resources>
