@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".presentation.blog.form.FormBlogActivity"/>
+        <activity android:name=".presentation.blog.detail.PostDetailActivity"/>
+        <activity android:name=".presentation.blog.list.ListBlogActivity" />
+        <activity android:name=".presentation.blog.form.FormBlogActivity" />
         <activity android:name=".presentation.login.forgot.ForgotPasswordActivity" />
         <activity android:name=".presentation.login.register.RegisterActivity" />
         <activity android:name=".presentation.login.LoginActivity">

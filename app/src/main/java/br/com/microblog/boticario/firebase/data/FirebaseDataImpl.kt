@@ -7,10 +7,10 @@ import com.google.firebase.firestore.Query
 
 class FirebaseDataImpl(private val firebaseDataProvider: FirebaseDataProvider) : FirebaseData {
 
-    override fun getPosts(userId: String): Query {
+    override fun getPosts(): Query {
         return firebaseDataProvider.getDatabaseReference()
             .collection(Constants.FIRESTORE_POST)
-            .whereEqualTo("userId", userId)
+            .orderBy("postDate", Query.Direction.DESCENDING)
     }
 
     override fun getProfile(userId: String): DocumentReference {

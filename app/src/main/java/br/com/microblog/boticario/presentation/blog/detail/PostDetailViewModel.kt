@@ -1,4 +1,4 @@
-package br.com.microblog.boticario.presentation.blog.form
+package br.com.microblog.boticario.presentation.blog.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +10,7 @@ import br.com.microblog.boticario.firebase.provider.FirebaseDataProvider
 import br.com.microblog.boticario.model.Post
 import br.com.microblog.boticario.model.UserData
 
-class FormBlogViewModel(
+class PostDetailViewModel(
     private val firebaseData: FirebaseData,
     private val db: FirebaseDataProvider
 ) : ViewModel() {
@@ -20,7 +20,10 @@ class FormBlogViewModel(
     val isHideKeyBoard = mutableLiveData(Event(false))
     val isLoading = mutableLiveData(Event(false))
     val isPostSaved = mutableLiveData(Event(false))
+    val isPostDeleted = mutableLiveData(Event(false))
     val errorSavePost = MutableLiveData<Event<String>>()
+    val isAlertRemove = mutableLiveData(Event(false))
+    val isUpdatePost = mutableLiveData(Event(false))
     val buttonState = MutableLiveData<Boolean>()
 
     fun getProfile(userId: String) {
@@ -43,27 +46,48 @@ class FormBlogViewModel(
         checkButtonState()
     }
 
-    fun savePost() {
+    fun updateAction(){
+        isUpdatePost.value = Event(true)
+    }
+
+    fun updatePost(postId: String) {
 
         isHideKeyBoard.value = Event(true)
         isLoading.value = Event(true)
 
-        val postRef = db.getDatabaseReference()
-            .collection(Constants.FIRESTORE_POST).document()
-
-        post.id = postRef.id
+        val postMap: HashMap<String, Any> = HashMap()
+        postMap["post"] = post.post
 
         db.getDatabaseReference()
             .collection(Constants.FIRESTORE_POST)
-            .document(post.id)
-            .set(post)
+            .document(postId)
+            .update(postMap)
             .addOnSuccessListener {
-                post.id = ""
                 isPostSaved.value = Event(true)
             }
             .addOnFailureListener { exception ->
-                post.id = ""
                 errorSavePost.value = Event(exception.message!!)
             }
+    }
+
+    fun removePost(postId: String){
+
+        isHideKeyBoard.value = Event(true)
+        isLoading.value = Event(true)
+
+        db.getDatabaseReference()
+            .collection(Constants.FIRESTORE_POST)
+            .document(postId)
+            .delete()
+            .addOnSuccessListener {
+                isPostDeleted.value = Event(true)
+            }
+            .addOnFailureListener { exception ->
+                errorSavePost.value = Event(exception.message!!)
+            }
+    }
+
+    fun alertRemovePost(){
+        isAlertRemove.value = Event(true)
     }
 }

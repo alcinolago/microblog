@@ -20,4 +20,7 @@
     <string name="forgot_password_title">Esqueçeu a senha?</string>
     <string name="forgot_password_instructions">Não tem problema, me informa o seu email!</string>
     <string name="button_add_post">Inserir Post</string>
+    <string name="button_update_post">Alterar</string>
+    <string name="button_delete_post">Apagar</string>
+    <string name="hint_post">Escreva o seu post...</string>
 </resources>

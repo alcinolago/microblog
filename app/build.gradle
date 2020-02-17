@@ -29,6 +29,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -67,6 +71,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.2'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:5.0.0'
 
     //Lottie
     implementation "com.airbnb.android:lottie:$lottieVersion"

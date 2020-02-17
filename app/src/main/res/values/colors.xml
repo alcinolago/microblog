@@ -2,7 +2,10 @@
 <resources>
     <color name="colorPrimary">#5C1A20</color>
     <color name="colorPrimaryDark">#5C1A20</color>
-    <color name="colorAccent">@android:color/darker_gray</color>
+    <color name="colorAccent">#5C1A20</color>
     <color name="background">#5C1A20</color>
     <color name="overlay">#00ffffff</color>
+    <color name="lightGray">#657786</color>
+    <color name="ultraLightGray">#CCCCCC</color>
+
 </resources>

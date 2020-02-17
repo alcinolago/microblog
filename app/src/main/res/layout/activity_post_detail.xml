@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable name="viewModel" type="br.com.microblog.boticario.presentation.blog.form.FormBlogViewModel"/>
+        <variable name="viewModel" type="br.com.microblog.boticario.presentation.blog.detail.PostDetailViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,9 +30,7 @@
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_margin="16dp"
             android:elevation="4dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="6dp"
@@ -44,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="16dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_post"
@@ -63,11 +61,11 @@
                         android:layout_height="300dp"
                         android:fontFamily="@font/roboto_medium"
                         android:onTextChanged="@{viewModel::onPostChanged}"
+                        android:padding="15dp"
                         android:maxLength="280"
                         android:focusable="true"
                         android:hint="@string/hint_post"
                         android:autofillHints="@string/hint_post"
-                        android:padding="15dp"
                         android:text="@={viewModel.post.post}"
                         android:textSize="18sp"
                         tools:targetApi="o" />
@@ -75,17 +73,30 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/buttonRegister"
+                    android:id="@+id/buttonUpdate"
                     style="@style/Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:onClick="@{() -> viewModel.updateAction()}"
+                    android:text="@string/button_update_post"
                     android:background="@{viewModel.buttonState ? @drawable/bg_button : @drawable/bg_button_inactive}"
                     android:clickable="@{viewModel.buttonState}"
                     android:focusable="@{viewModel.buttonState}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+                <Button
+                    android:id="@+id/buttonDelete"
+                    style="@style/Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:onClick="@{() -> viewModel.savePost()}"
-                    android:text="@string/button_add_post"
+                    android:onClick="@{() -> viewModel.alertRemovePost()}"
+                    android:text="@string/button_delete_post"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
